@@ -19,7 +19,7 @@ void Print(int arr[], const int n)
 	cout << endl;
 }
 
-void Shift(int arr[], const int n, const int number_of_shifts)
+void ShiftLeft(int arr[], const int n, const int number_of_shifts)
 {
 	for (int i = 0; i < number_of_shifts; i++)
 	{
@@ -44,7 +44,7 @@ void main()
 	//Сдвиг массива на заданное число элементов
 	int number_of_shifts;
 	cout << "Введите количество сдвигов: "; cin >> number_of_shifts;
-	Shift(arr, n, number_of_shifts);
+	ShiftLeft(arr, n, number_of_shifts);
 	Print(arr, n);//вывод сдвинутого массива на экран
 
 	//////////////////////////
@@ -56,6 +56,6 @@ void main()
 	
 	//сдвиг второго массива
 	cout << "\nВведите количество сдвигов: "; cin >> number_of_shifts;
-	Shift(brr, m, number_of_shifts);
+	ShiftLeft(brr, m, number_of_shifts);
 	Print(brr, m);//Выводим сдвинутый массив на экран
 }
