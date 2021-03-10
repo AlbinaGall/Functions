@@ -19,8 +19,8 @@ void Print(int arr[], const int n)
 	cout << endl;
 }
 
-void ShiftLeft(int arr[], const int n, const int number_of_shifts)
-{
+void ShiftLeft(int arr[], const int n, const int number_of_shifts){
+	//Циклический сдвиг влево
 	for (int i = 0; i < number_of_shifts; i++)
 	{
 		int buffer = arr[0];
@@ -32,6 +32,76 @@ void ShiftLeft(int arr[], const int n, const int number_of_shifts)
 	}
 }
 
+void ShiftRight(int arr[], const int n, const int number_of_shifts){
+	//Циклический сдвиг вправо
+	for (int i = 0; i < (n-number_of_shifts); i++)
+	{
+		int buffer = arr[0];
+		for (int j = 0; j < n; j++)
+		{
+			arr[j] = arr[j+1];
+		}
+		arr[n-1] = buffer;
+	}
+}
+
+void Sort(int arr[], const int n) {
+	//сортировка массива
+	int buffer = 0;
+	for (int i = 0; i < (n - 1); i++) {
+		for (int j = 0; j < (n - i - 1); j++) {
+			if (arr[j] > arr[j + 1]) {
+				// меняем элементы местами
+				buffer = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = buffer;
+			}
+		}
+	}
+}
+
+
+double Sum(int arr[], const int n) {
+	// Cумма элементов массива
+	double sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum = sum + arr[i];
+	}
+	return sum;
+}
+
+
+double Avg(int arr[], const int n) {
+	// Cреднее арифметическое
+	double sum = Sum(arr, n);
+	double avg = sum / n;
+	return avg;
+}
+
+
+double Min(int arr[], const int n) {
+	// Минимальное значение
+	double min = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < min) min = arr[i];
+	}
+	return min;
+}
+
+
+double Max(int arr[], const int n) {
+	// Максимальное значение
+	double max = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > max) max = arr[i];
+	}
+	return max;
+}
+
+
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -39,23 +109,43 @@ void main()
 	const int n = 5;
 	int arr[n];
 	FillRand(arr, n);//заполнение первого массива
+	cout << "Исходный массив: \n";
 	Print(arr, n);//вывод первого массива в исходном состоянии
+	Sort(arr, n);//сортировка первого массива
+	cout << "Сортированный массив: \n";
+	Print(arr, n);//вывод первого массива в упорядоченном состоянии
 	
 	//Сдвиг массива на заданное число элементов
 	int number_of_shifts;
 	cout << "Введите количество сдвигов: "; cin >> number_of_shifts;
 	ShiftLeft(arr, n, number_of_shifts);
 	Print(arr, n);//вывод сдвинутого массива на экран
+	cout << endl;
 
-	//////////////////////////
+	/*Сдвиг вправо*/
 
 	const int m = 8;
 	int brr[m];
 	FillRand(brr, m);//заполнение второго массива
-	Print(brr, m);//вывод второго массива
+	cout << "Исходный массив_2: \n";
+	Print(brr, m);//вывод первого массива в исходном состоянии
+	Sort(brr, m);//сортировка первого массива
+	cout << "Сортированный массив_2: \n";
+	Print(brr, m);//вывод первого массива в упорядоченном состоянии
 	
 	//сдвиг второго массива
 	cout << "\nВведите количество сдвигов: "; cin >> number_of_shifts;
-	ShiftLeft(brr, m, number_of_shifts);
+	ShiftRight(brr, m, number_of_shifts);
 	Print(brr, m);//Выводим сдвинутый массив на экран
+
+	/* HomeWork */
+	// Сумма элементов массива
+	cout << "\nСумма элементов массива: " << Sum(arr, n) << endl;
+	// Среднее арифметическое
+	cout << "Среднее арифметическое значение: " << Avg(arr, n) << endl;
+	// Минимальное значение
+	cout << "Минимальное значение: " << Min(arr, n) << endl;
+	// Максимальное значение
+	cout << "Максимальное значение: " << Max(arr, n) << endl;
+
 }
