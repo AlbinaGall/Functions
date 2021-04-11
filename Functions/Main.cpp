@@ -3,9 +3,13 @@ using namespace std;
 
 #include "FillRand.h"
 #include"Print.h"
+#include"Print.cpp"
 #include"Shift.h"
+#include"Shift.cpp"
 #include"Sort.h"
+#include"Sort.cpp"
 #include"Statistic.h"
+#include"Statistic.cpp"
 
 /*template<typename T> void Print(T arr[], const int n);
 void Print(int arr[], const int n);

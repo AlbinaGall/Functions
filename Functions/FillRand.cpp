@@ -1,5 +1,5 @@
 #include "FillRand.h"
-#include<iostream>
+
 
 
 void FillRand(char arr[], const int n, int MinRand, int MaxRand)
