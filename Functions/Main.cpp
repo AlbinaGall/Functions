@@ -2,6 +2,7 @@
 using namespace std;
 
 #include "FillRand.h"
+#include "UniqRandom.h"
 #include"Print.h"
 #include"Print.cpp"
 #include"Shift.h"
@@ -11,43 +12,7 @@ using namespace std;
 #include"Statistic.h"
 #include"Statistic.cpp"
 
-/*template<typename T> void Print(T arr[], const int n);
-void Print(int arr[], const int n);
-void Print(float arr[], const int n);
-void Print(double arr[], const int n);*/
 
-/*template<typename T> void ShiftLeft(T arr[], const int n, const int number_of_shifts);
-void ShiftLeft(int arr[], const int n, const int number_of_shifts);
-void ShiftLeft(float arr[], const int n, const int number_of_shifts);
-void ShiftLeft(double arr[], const int n, const int number_of_shifts);*/
-
-/*template<typename T> void ShiftRight(T arr[], const int n, const int number_of_shifts);
-void ShiftRight(int arr[], const int n, const int number_of_shifts);
-void ShiftRight(float arr[], const int n, const int number_of_shifts);
-void ShiftRight(double arr[], const int n, const int number_of_shifts);*/
-
-/*template<typename T> void Sort(T arr[], const int n);
-void Sort(int arr[], const int n);
-void Sort(float arr[], const int n);
-void Sort(double arr[], const int n);*/
-
-/*template<typename T> T Sum(T arr[], const int n);
-float Sum(float arr[], const int n);
-double Sum(double arr[], const int n);*/
-
-/*template<typename T> double Avg(T arr[], const int n);
-double Avg(float arr[], const int n);
-double Avg(double arr[], const int n);*/
-
-/*template<typename T> T Min(T arr[], const int n);
-int Min(int arr[], const int n);
-float Min(float arr[], const int n);
-double Min(double arr[], const int n);*/
-
-/*template<typename T> T Max(T arr[], const int n);
-int Max(int arr[], const int n);
-float Max(float arr[], const int n);
-double Max(double arr[], const int n);*/
 
 void main()
 {
@@ -74,7 +39,8 @@ void main()
 	
 	//INT
 	int arr[n];
-	FillRand(arr, n);
+	//FillRand(arr, n);
+	UniqRandom(arr, n);
 	cout << "Исходный массив: \n";
 	Print(arr, n);
 	Sort(arr, n);

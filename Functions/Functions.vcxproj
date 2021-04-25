@@ -145,6 +145,7 @@
     <ClCompile Include="Shift.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Statistic.cpp" />
+    <ClCompile Include="UniqRandom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FillRand.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Shift.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="Statistic.h" />
+    <ClInclude Include="UniqRandom.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
